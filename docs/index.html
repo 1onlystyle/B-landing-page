@@ -2,444 +2,577 @@
 <html lang="ko">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>얼굴골격축소훈련소 - 4주 윤곽 변화</title>
-  <meta name="description" content="하루 10분, 4주 프로그램으로 얼굴 골격과 습관을 바꾸는 얼굴골격축소훈련소" />
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, viewport-fit=cover"
+  />
+  <title>얼굴 설계 | 진짜 나를 위한 진단</title>
+  <!-- Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+  />
+  <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            coral: { DEFAULT: '#FF6F61' },   // 코랄 오렌지
+            dahong: { DEFAULT: '#E53935' },  // 다홍
+            redp: '#D7263D',                 // 레드 포인트
+            ink: '#0B0D0E',                  // 블랙 느낌 배경
+            coal: '#111215',                 // 짙은 블랙
+            ash: '#2A2E33',                  // 어두운 그레이
+            mist: '#F3F4F6',                 // 밝은 그레이(카드 배경)
+            midgray: '#9CA3AF',              // 중간 그레이(텍스트)
+          },
+          fontFamily: {
+            sans: ['"Noto Sans KR"', 'ui-sans-serif', 'system-ui'],
+          },
+          boxShadow: {
+            glow: '0 12px 34px rgba(255,111,97,.28)',
+            deep: '0 20px 60px rgba(0,0,0,.35)',
+          },
+          backgroundImage: {
+            'hero-gradient':
+              'radial-gradient(1000px 600px at 85% 15%, rgba(255,111,97,.15), transparent), radial-gradient(800px 500px at 15% 85%, rgba(229,57,53,.12), transparent)',
+            'stripe':
+              'linear-gradient(135deg, rgba(255,255,255,.06) 0%, rgba(255,255,255,0) 60%)',
+          },
+          keyframes: {
+            floaty: {
+              '0%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-10px)' },
+              '100%': { transform: 'translateY(0px)' },
+            },
+          },
+          animation: {
+            floaty: 'floaty 6s ease-in-out infinite',
+          },
+        },
+      },
+    };
+  </script>
   <style>
-    :root{
-      --orange: #ff7a3d;
-      --coral: #ff6b4a;
-      --scarlet: #ff3b30;
-      --deep-red: #d61f1f;
-      --black: #0b0b0c;
-      --dark-gray: #1a1b1e;
-      --soft-white: #ffffff;
-    }
-    html{ scroll-behavior:smooth; }
-    body{ font-family: "Noto Sans KR", system-ui, -apple-system, Segoe UI, Roboto, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif; background: var(--black); color:#f8fafc;}
-    .glow { box-shadow: 0 10px 30px -10px rgba(255, 91, 58, .35), inset 0 0 0 1px rgba(255,255,255,.06); }
-    .brand-grad { background: linear-gradient(135deg, var(--coral), var(--scarlet) 55%, var(--deep-red)); }
-    .brand-text { background: linear-gradient(135deg, #fff, #ffe5df 60%, #ffd2c7); -webkit-background-clip:text; background-clip:text; color:transparent; }
-    .ring-brand { box-shadow: 0 0 0 8px rgba(255, 107, 74, .12); }
-    .float-slow { animation: float 9s ease-in-out infinite; }
-    .float-med { animation: float 6.5s ease-in-out infinite; }
-    .float-fast { animation: float 4.5s ease-in-out infinite; }
-    @keyframes float { 0%,100%{ transform: translateY(0); } 50%{ transform: translateY(-12px); } }
-    .rotate { transition: transform .25s ease; }
-    .section { padding-top: 80px; padding-bottom: 80px; }
-    @media (min-width:1024px){ .section { padding-top: 110px; padding-bottom: 110px; } }
+    html, body { scroll-behavior: smooth; }
   </style>
 </head>
-<body class="antialiased selection:bg-[#ffefe9] selection:text-[#d61f1f]">
-  <!-- NAV -->
-  <header class="fixed top-0 inset-x-0 z-50">
-    <div class="mx-auto max-w-7xl px-5">
-      <div class="mt-4 backdrop-blur-xl bg-black/35 border border-white/10 rounded-2xl px-5 py-3 flex items-center justify-between glow">
+<body class="bg-ink text-white font-sans antialiased">
+  <!-- Page wrapper -->
+  <div class="relative min-h-screen bg-hero-gradient">
+    <!-- Decorative orbs -->
+    <div class="pointer-events-none absolute inset-0">
+      <span class="absolute -top-8 -right-8 w-72 h-72 rounded-full opacity-25 blur-3xl"
+            style="background: radial-gradient(circle at 30% 30%, rgba(255,111,97,.55), rgba(255,111,97,0));"></span>
+      <span class="absolute bottom-10 left-1/4 w-56 h-56 rounded-full opacity-20 blur-2xl"
+            style="background: radial-gradient(circle at 70% 70%, rgba(229,57,53,.55), rgba(229,57,53,0));"></span>
+    </div>
+
+    <!-- Header -->
+    <header class="relative z-10">
+      <div class="mx-auto max-w-7xl px-6 py-6 flex items-center justify-between">
         <div class="flex items-center gap-3">
-          <div class="h-9 w-9 rounded-xl brand-grad ring-brand"></div>
-          <span class="font-extrabold tracking-tight text-white">얼굴골격축소훈련소</span>
+          <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-coral to-dahong shadow-glow"></div>
+          <p class="text-sm tracking-wide text-white">바른얼굴윤곽연구소</p>
         </div>
-        <nav class="hidden md:flex items-center gap-6 text-sm text-zinc-200">
-          <a href="#problem" class="hover:text-white/90 transition">왜 필요한가</a>
-          <a href="#solution" class="hover:text-white/90 transition">어떻게 바꾸나</a>
-          <a href="#trust" class="hover:text-white/90 transition">근거</a>
-          <a href="#results" class="hover:text-white/90 transition">변화</a>
-          <a href="#faq" class="hover:text-white/90 transition">FAQ</a>
-        </nav>
-        <div class="hidden sm:inline-flex items-center gap-2 px-3 py-1.5 rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm">
-  <span class="shrink-0 h-6 w-6 rounded-lg flex items-center justify-center text-white font-bold" style="background: linear-gradient(135deg, var(--orange), var(--scarlet)); box-shadow: 0 6px 14px -8px rgba(255,59,48,.35);">⏱️</span>
-  <div class="leading-tight">
-    <div class="text-[11px] text-white/70">내 혜택 마감까지</div>
-    <div class="text-sm font-extrabold tracking-tight"><span id="dday">D-3</span> · <span id="countdown" class="tabular-nums">72:00:00</span></div>
-  </div>
-</div>
+        <a href="#cta"
+           class="group inline-flex items-center gap-2 rounded-full bg-white/5 px-4 py-2 text-sm text-white hover:bg-white/10 transition">
+          <span>혜택 보기</span>
+          <svg class="w-4 h-4 opacity-70 group-hover:translate-x-0.5 transition"
+               fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+          </svg>
+        </a>
       </div>
-    </div>
-  </header>
+    </header>
 
-  <!-- HERO -->
-  <section id="hero" class="relative overflow-hidden section pt-40">
-    <div class="absolute inset-0 -z-10">
-      <div class="absolute -top-24 -right-24 h-[420px] w-[420px] rounded-full blur-3xl opacity-30" style="background: radial-gradient(60% 60% at 50% 50%, rgba(255,107,74,.6), rgba(255,59,48,.25) 60%, transparent 70%);"></div>
-      <div class="absolute -bottom-16 -left-16 h-[420px] w-[420px] rounded-full blur-3xl opacity-25" style="background: radial-gradient(60% 60% at 50% 50%, rgba(214,31,31,.5), rgba(255,122,61,.2) 60%, transparent 70%);"></div>
-      <svg class="absolute inset-0 w-full h-full opacity-[0.07]" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-            <path d="M40 0H0V40" fill="none" stroke="white" stroke-width="0.5"/>
-          </pattern>
-        </defs>
-        <rect width="100%" height="100%" fill="url(#grid)"/>
-      </svg>
-    </div>
+    <!-- Hero -->
+    <section id="hero" class="relative z-10">
+      <div class="mx-auto max-w-7xl px-6 pt-6 pb-16 md:pb-24">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+          <!-- Copy -->
+          <div class="lg:col-span-6">
+            <div class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[12px] text-white mb-5 backdrop-blur">
+              <span class="inline-block w-1.5 h-1.5 rounded-full bg-coral"></span>
+              전문가와 함께, 데이터로 설계하는 나의 인상
+            </div>
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-relaxed lg:leading-loose tracking-tight md:tracking-normal">
+              <span class="text-white">〈</span>
+              <span class="bg-clip-text text-transparent bg-gradient-to-r from-coral via-redp to-dahong">진짜 나</span>
+              <span class="text-white">〉를 위한</span><br />
+              <span class="inline-block tracking-tight md:tracking-normal">📝 자기인식 얼굴 구조 설계</span>
+            </h1>
+            <p class="mt-5 text-base sm:text-lg text-gray-300 leading-relaxed">
+              지금껏 감으로 관리해온 얼굴,<br />
+              이젠 전문가와 함께 당신에게 맞는 얼굴을 설계해보세요.
+            </p>
 
-    <div class="mx-auto max-w-7xl px-5 grid gap-12 items-center">
-      <div>
+            <!-- Info chips -->
+            <div class="mt-6 flex flex-wrap items-center gap-3">
+              <a data-scroll-to="#benefits"
+                 class="cursor-pointer inline-flex items-center gap-2 rounded-full bg-white/5 px-4 py-2 text-sm hover:bg-white/10 transition">
+                <span class="inline-flex w-4 h-4 items-center justify-center rounded-full bg-coral text-ink font-bold">✓</span>
+                얼굴 구조 설계 무료 진단
+              </a>
+              <a data-scroll-to="#discount"
+                 class="cursor-pointer inline-flex items-center gap-2 rounded-full bg-white/5 px-4 py-2 text-sm hover:bg-white/10 transition">
+                <span class="inline-flex w-4 h-4 items-center justify-center rounded-full bg-dahong text-white font-bold">%</span>
+                첫 방문 50% 할인
+              </a>
+            </div>
 
-        <div class="inline-flex items-center gap-2 text-xs text-white/80 bg-white/5 border border-white/10 rounded-full px-3 py-1 mb-5">
-          <span class="h-2 w-2 rounded-full" style="background: conic-gradient(from 0deg, var(--coral), var(--scarlet));"></span>
-          4주 변화 프로그램
-        </div>
-        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight">
-          얼굴 골격, <span style="color:#ff3b30; font-weight:900;">진짜</span><br/>
-          <span class="brand-text">줄일 수 있습니다.</span>
-        </h1>
-        <p class="mt-5 text-lg text-zinc-200 leading-relaxed">
-          하루 10분, 4주만 투자하세요.<br/>
-          [얼굴골격축소훈련소]에서 당신의 윤곽이 달라집니다.
-        </p>
-        <div class="mt-8 flex flex-wrap items-center gap-4">
-          <a href="https://walla.my/survey/Ih3mvoxYWhc2qXzD4UNy" class="inline-flex items-center gap-2 rounded-2xl brand-grad text-white font-semibold px-6 py-3 glow hover:translate-y-[-2px] active:translate-y-0 transition">
-            얼굴축소 훈련 시작하기
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 5l7 7-7 7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
-          <a href="#problem" class="inline-flex items-center gap-2 text-white/80 hover:text-white transition">
-            더 알아보기
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M7 10l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
-        </div>
-        <div class="mt-8 text-xs text-white/60">수술·시술 없이, 습관과 구조를 바꿉니다.</div>
-      </div>
-    </div>
-  </section>
+            <!-- Primary CTA -->
+            <div class="mt-8 flex flex-col sm:flex-row items-start sm:items-center gap-4">
+              <button id="primaryCta"
+                      class="group inline-flex items-center justify-center gap-3 rounded-xl bg-gradient-to-r from-coral to-dahong px-6 py-3.5 text-base font-semibold text-ink shadow-glow hover:opacity-95 transition">
+                👉 지금 진단 신청하기
+                <svg class="w-5 h-5 text-ink/80 group-hover:translate-x-0.5 transition"
+                     fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path>
+                </svg>
+              </button>
+            </div>
+          </div>
 
-  <!-- PROBLEM -->
-  <section id="problem" class="section bg-[#121316]">
-    <div class="mx-auto max-w-6xl px-5">
-      <h2 class="text-3xl sm:text-4xl font-extrabold">“왜 내 얼굴은 계속 커 보일까?”</h2>
-      <div class="mt-6 grid sm:grid-cols-2 gap-6">
-        <div class="rounded-2xl bg-white/5 border border-white/10 p-6 glow">
-          <p class="text-white/90">다이어트해도 얼굴골격은 그대로.</p>
-        </div>
-        <div class="rounded-2xl bg-white/5 border border-white/10 p-6 glow">
-          <p class="text-white/90">부기만 빠졌다가 금세 돌아오는 얼굴.</p>
-        </div>
-        <div class="rounded-2xl bg-white/5 border border-white/10 p-6 glow">
-          <p class="text-white/90">화장으로 가려도 티 나는 골격.</p>
-        </div>
-        <div class="rounded-2xl bg-white/5 border border-white/10 p-6 glow">
-          <p class="text-white/90">윤곽수술했는데도 다시 커진 얼굴.</p>
-        </div>
-        <div class="rounded-2xl bg-white/5 border border-white/10 p-6 glow">
-          <p class="text-white/90">성형수술을 앞두고<br/> 얼굴 비대칭이 신경 쓰이는 분.</p>
-        </div>
-        <div class="rounded-2xl bg-white/5 border border-white/10 p-6 glow">
-          <p class="text-white/90">카메라에서 사진 찍으면<br/>유난히 비대칭, 심하게 차이 나시는 분</p>
+
         </div>
       </div>
-      <div class="mt-6">
-        <p class="text-center text-white/90">👉원인은 피부가 아니라 얼굴 골격과 습관이었습니다.</p>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- SOLUTION -->
-  <section id="solution" class="section bg-gradient-to-b from-[#121316] to-[#0f0f10]">
-    <div class="mx-auto max-w-6xl px-5">
-      <div class="grid lg:grid-cols-5 gap-10 items-start">
-        <div class="lg:col-span-2">
-          <h2 class="text-3xl sm:text-4xl font-extrabold">“골격을 줄이는 공식이 있습니다.”</h2>
-          <p class="mt-4 text-white/85">
-            [얼굴골격축소훈련소]는 골격 라인을 정리하는 4주 프로그램입니다.<br/>
-            하루 10분, 간단한 훈련으로 얼굴이 점점 작아집니다.<br/>
-            수술·시술 없이, 습관과 구조를 바꿉니다.
+    <!-- ② 공감 섹션 -->
+    <section class="relative z-10">
+      <div class="mx-auto max-w-3xl px-6 py-12">
+        <div class="rounded-2xl border border-white/10 bg-white/[.03] p-8 backdrop-blur">
+          <p class="text-xl sm:text-2xl leading-relaxed text-gray-200">
+            무언가 바꾸고 싶은데<br />
+            어디서부터 시작해야 할지 막막했다면—
           </p>
-          <a href="#cta" class="mt-7 inline-flex items-center gap-2 rounded-2xl brand-grad text-white font-semibold px-5 py-3 glow hover:translate-y-[-2px] active:translate-y-0 transition">
-            얼굴축소 훈련 시작하기
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 5l7 7-7 7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
+          <p class="mt-5 text-lg text-gray-300">
+            가장 먼저 해야 할 건<br />
+            <span class="font-semibold bg-clip-text text-transparent bg-gradient-to-r from-coral to-dahong">〈내 얼굴을 정확히 이해하는 것〉</span>
+            입니다.
+          </p>
         </div>
-        <div class="lg:col-span-3">
-          <div class="grid sm:grid-cols-2 gap-6">
-            <div class="rounded-2xl p-6 border border-white/10 bg-white/5 hover:bg-white/[0.08] transition">
-              <div class="text-sm text-white/70 mb-2">원리 01</div>
-              <div class="font-bold text-white">근막·근육 라인 정렬</div>
-              <p class="mt-2 text-white/75 text-sm">자주 쓰는 근육의 불균형을 정리해, 골격이 부풀어 보이는 원인을 낮춥니다.</p>
-            </div>
-            <div class="rounded-2xl p-6 border border-white/10 bg-white/5 hover:bg-white/[0.08] transition">
-              <div class="text-sm text-white/70 mb-2">원리 02</div>
-              <div class="font-bold text-white">관절 가동 범위 회복</div>
-              <p class="mt-2 text-white/75 text-sm">턱·광대 주변의 움직임을 부드럽게 해 라인을 매끈하게 만듭니다.</p>
-            </div>
-            <div class="rounded-2xl p-6 border border-white/10 bg-white/5 hover:bg-white/[0.08] transition">
-              <div class="text-sm text-white/70 mb-2">원리 03</div>
-              <div class="font-bold text-white">나쁜 습관 교정</div>
-              <p class="mt-2 text-white/75 text-sm">무의식적 표정·저작 습관을 바꿔 되돌아옴을 줄입니다.</p>
-            </div>
-            <div class="rounded-2xl p-6 border border-white/10 bg-white/5 hover:bg-white/[0.08] transition">
-              <div class="text-sm text-white/70 mb-2">원리 04</div>
-              <div class="font-bold text-white">10분 루틴 구조화</div>
-              <p class="mt-2 text-white/75 text-sm">부담 없이 지속 가능한 루틴으로 4주 변화를 만듭니다.</p>
+      </div>
+    </section>
+
+    <!-- ③ 이런 분께 추천 -->
+    <section class="relative z-10">
+      <div class="mx-auto max-w-7xl px-6 py-12">
+        <h2 class="text-2xl sm:text-3xl font-extrabold">이런 분께 추천드립니다</h2>
+        <div class="mt-6 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div class="rounded-xl border border-white/10 bg-white/[.04] p-5 hover:bg-white/[.06] transition">
+            <div class="flex items-start gap-3">
+              <span class="mt-0.5 inline-flex w-6 h-6 items-center justify-center rounded-full bg-coral text-ink text-sm font-bold">✔</span>
+              <p class="text-gray-200">자기 관리를 시작하고 싶은데 막막한 분</p>
             </div>
           </div>
+          <div class="rounded-xl border border-white/10 bg-white/[.04] p-5 hover:bg-white/[.06] transition">
+            <div class="flex items-start gap-3">
+              <span class="mt-0.5 inline-flex w-6 h-6 items-center justify-center rounded-full bg-coral text-ink text-sm font-bold">✔</span>
+              <p class="text-gray-200">나에게 어울리는 인상이 궁금한 분</p>
+            </div>
+          </div>
+          <div class="rounded-xl border border-white/10 bg-white/[.04] p-5 hover:bg-white/[.06] transition">
+            <div class="flex items-start gap-3">
+              <span class="mt-0.5 inline-flex w-6 h-6 items-center justify-center rounded-full bg-coral text-ink text-sm font-bold">✔</span>
+              <p class="text-gray-200">얼굴형과 이미지가 어색하다고 느끼는 분</p>
+            </div>
+          </div>
+          <div class="rounded-xl border border-white/10 bg-white/[.04] p-5 hover:bg-white/[.06] transition">
+            <div class="flex items-start gap-3">
+              <span class="mt-0.5 inline-flex w-6 h-6 items-center justify-center rounded-full bg-coral text-ink text-sm font-bold">✔</span>
+              <p class="text-gray-200">사진 찍을 때마다 뭔가 어색하신 분</p>
+            </div>
+          </div>
+          <div class="rounded-xl border border-white/10 bg-white/[.04] p-5 hover:bg-white/[.06] transition">
+            <div class="flex items-start gap-3">
+              <span class="mt-0.5 inline-flex w-6 h-6 items-center justify-center rounded-full bg-coral text-ink text-sm font-bold">✔</span>
+              <p class="text-gray-200">비대칭이나 라인이 고민인 분</p>
+            </div>
+          </div>
+          <div class="rounded-xl border border-white/10 bg-white/[.04] p-5 hover:bg-white/[.06] transition">
+            <div class="flex items-start gap-3">
+              <span class="mt-0.5 inline-flex w-6 h-6 items-center justify-center rounded-full bg-coral text-ink text-sm font-bold">✔</span>
+              <p class="text-gray-200">전문가 피드백으로 방향 잡고 싶은 분</p>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- TRUST -->
-  <section id="trust" class="section bg-[#0f0f10]">
-    <div class="mx-auto max-w-6xl px-5">
-      <h2 class="text-3xl sm:text-4xl font-extrabold">“연구와 실제 얼굴 데이터를 기반으로”</h2>
-      <div class="grid md:grid-cols-3 gap-6 mt-8">
-        <div class="rounded-2xl p-6 border border-white/10 bg-white/[0.04]">
-          <div class="text-white font-semibold text-center">경희대 동서의학대학원<br/><span style="color:#ff3b30;">융학건강과학 연구</span>에서<br/>출발</div>
-          <p class="mt-2 text-white/75 text-sm text-center">학술적 근거 위에서 설계된 접근으로, 안전성과 체계성을 확보했습니다.</p>
-        </div>
-        <div class="rounded-2xl p-6 border border-white/10 bg-white/[0.04]">
-          <div class="text-white font-semibold text-center"><span style="color:#ff3b30;">5500명 임상 경험</span> 바탕<br/>얼굴피드백 검증</div>
-          <p class="mt-2 text-white/75 text-sm text-center">현장 적용과 반복 개선으로 실용성을 높였습니다.</p>
-        </div>
-        <div class="rounded-2xl p-6 border border-white/10 bg-white/[0.04]">
-          <div class="text-white font-semibold text-center">바른얼굴윤곽연구소<br/><span style="color:#ff3b30;">노하우</span> 집약</div>
-          <p class="mt-2 text-white/75 text-sm text-center">축적된 관찰과 케이스가 녹아든 루틴으로 구성됩니다.</p>
+    <!-- ④ 알 수 있는 것들 -->
+    <section class="relative z-10">
+      <div class="mx-auto max-w-7xl px-6 py-12">
+        <h2 class="text-2xl sm:text-3xl font-extrabold">이 진단으로 알 수 있는 것들</h2>
+        <div class="mt-6 grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div class="rounded-xl border border-white/10 bg-white/[.03] p-5">
+            <div class="flex items-start gap-3">
+              <span class="inline-flex w-8 h-8 items-center justify-center rounded-lg bg-gradient-to-br from-coral to-dahong text-ink font-extrabold">1</span>
+              <p class="text-gray-200">얼굴 비율과 라인의 흐름</p>
+            </div>
+          </div>
+          <div class="rounded-xl border border-white/10 bg-white/[.03] p-5">
+            <div class="flex items-start gap-3">
+              <span class="inline-flex w-8 h-8 items-center justify-center rounded-lg bg-gradient-to-br from-coral to-dahong text-ink font-extrabold">2</span>
+              <p class="text-gray-200">중심이 되는 인상 포인트</p>
+            </div>
+          </div>
+          <div class="rounded-xl border border-white/10 bg-white/[.03] p-5">
+            <div class="flex items-start gap-3">
+              <span class="inline-flex w-8 h-8 items-center justify-center rounded-lg bg-gradient-to-br from-coral to-dahong text-ink font-extrabold">3</span>
+              <p class="text-gray-200">개선 가능한 구조</p>
+            </div>
+          </div>
+          <div class="rounded-xl border border-white/10 bg-white/[.03] p-5">
+            <div class="flex items-start gap-3">
+              <span class="inline-flex w-8 h-8 items-center justify-center rounded-lg bg-gradient-to-br from-coral to-dahong text-ink font-extrabold">4</span>
+              <p class="text-gray-200">어울리는 스타일 키워드</p>
+            </div>
+          </div>
+          <div class="rounded-xl border border-white/10 bg-white/[.03] p-5">
+            <div class="flex items-start gap-3">
+              <span class="inline-flex w-8 h-8 items-center justify-center rounded-lg bg-gradient-to-br from-coral to-dahong text-ink font-extrabold">5</span>
+              <p class="text-gray-200">분위기와 이미지 방향성</p>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- RESULTS -->
-  <section id="results" class="section bg-[#121316]">
-    <div class="mx-auto max-w-6xl px-5">
-      <h2 class="text-3xl sm:text-4xl font-extrabold">“4주 뒤, 달라지는 건 이런 겁니다.”</h2>
-      <div class="mt-6 grid sm:grid-cols-3 gap-6">
-        <div class="rounded-2xl p-6 border border-white/10 bg-white/5">
-          <div class="text-2xl">📌</div>
-          <div class="mt-2 font-semibold text-white">턱선 정리</div>
-          <p class="text-white/75 text-sm mt-1">턱선이 정리되어 얼굴이 작아 보입니다.</p>
-        </div>
-        <div class="rounded-2xl p-6 border border-white/10 bg-white/5">
-          <div class="text-2xl">📌</div>
-          <div class="mt-2 font-semibold text-white">구조 변화</div>
-          <p class="text-white/75 text-sm mt-1">부기 아닌, 진짜 구조가 달라집니다.</p>
-        </div>
-        <div class="rounded-2xl p-6 border border-white/10 bg-white/5">
-          <div class="text-2xl">📌</div>
-          <div class="mt-2 font-semibold text-white">사진 변화</div>
-          <p class="text-white/75 text-sm mt-1">사진 속 얼굴이 다르게 보입니다.</p>
-        </div>
-        <div class="rounded-2xl p-6 border border-white/10 bg-white/5">
-          <div class="text-2xl">📌</div>
-          <div class="mt-2 font-semibold text-white">이중턱 완화</div>
-          <p class="text-white/75 text-sm mt-1">아래턱 라인이 가벼워져 목선이 또렷해집니다.</p>
-        </div>
-        <div class="rounded-2xl p-6 border border-white/10 bg-white/5">
-          <div class="text-2xl">📌</div>
-          <div class="mt-2 font-semibold text-white">광대 라인 완화</div>
-          <p class="text-white/75 text-sm mt-1">옆얼굴에서 볼륨이 과해 보이던 부분이 차분해집니다.</p>
-        </div>
-        <div class="rounded-2xl p-6 border border-white/10 bg-white/5">
-          <div class="text-2xl">📌</div>
-          <div class="mt-2 font-semibold text-white">표정 균형</div>
-          <p class="text-white/75 text-sm mt-1">좌우 표정이 자연스러워지고 인상이 부드러워집니다.</p>
-        </div>
-        <div class="rounded-2xl p-6 border border-white/10 bg-white/5">
-          <div class="text-2xl">📌</div>
-          <div class="mt-2 font-semibold text-white">중안부 축소</div>
-          <p class="text-white/75 text-sm mt-1">코 옆부터 입술 위까지의 영역이 슬림해 보입니다.</p>
-        </div>
-        <div class="rounded-2xl p-6 border border-white/10 bg-white/5">
-          <div class="text-2xl">📌</div>
-          <div class="mt-2 font-semibold text-white">볼살 붓기 완화</div>
-          <p class="text-white/75 text-sm mt-1">볼 주변 부기가 잦아들어 윤곽이 또렷해집니다.</p>
-        </div>
-        <div class="rounded-2xl p-6 border border-white/10 bg-white/5">
-          <div class="text-2xl">📌</div>
-          <div class="mt-2 font-semibold text-white">얼굴 전체 선 정리</div>
-          <p class="text-white/75 text-sm mt-1">이마부터 턱까지 흐르는 선이 균형 있게 정리됩니다.</p>
+    <!-- ⑤ 진단 흐름 -->
+    <section class="relative z-10">
+      <div class="mx-auto max-w-7xl px-6 py-12">
+        <h2 class="text-2xl sm:text-3xl font-extrabold">진단 흐름</h2>
+        <div class="mt-6 grid lg:grid-cols-5 gap-5">
+          <div class="lg:col-span-2 grid sm:grid-cols-2 gap-5">
+            <div class="rounded-xl border border-white/10 bg-white/[.04] p-6">
+              <div class="flex items-center justify-between">
+                <div class="text-sm text-white">Step 01</div>
+                <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-coral to-dahong text-ink flex items-center justify-center font-extrabold">1</div>
+              </div>
+              <p class="mt-3 font-semibold">설문폼 작성</p>
+              <p class="mt-1 text-sm text-white">기초 정보와 목표를 간단히 입력합니다.</p>
+            </div>
+            <div class="rounded-xl border border-white/10 bg-white/[.04] p-6">
+              <div class="flex items-center justify-between">
+                <div class="text-sm text-white">Step 02</div>
+                <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-coral to-dahong text-ink flex items-center justify-center font-extrabold">2</div>
+              </div>
+              <p class="mt-3 font-semibold">얼굴 정보 확인</p>
+              <p class="mt-1 text-sm text-white">분석에 필요한 사진/정보를 확인합니다.</p>
+            </div>
+            <div class="rounded-xl border border-white/10 bg-white/[.04] p-6">
+              <div class="flex items-center justify-between">
+                <div class="text-sm text-white">Step 03</div>
+                <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-coral to-dahong text-ink flex items-center justify-center font-extrabold">3</div>
+              </div>
+              <p class="mt-3 font-semibold">전문가 진단 리포트 제공</p>
+              <p class="mt-1 text-sm text-white">핵심 포인트와 방향성을 제시합니다.</p>
+            </div>
+            <div class="rounded-xl border border-white/10 bg-white/[.04] p-6">
+              <div class="flex items-center justify-between">
+                <div class="text-sm text-white">Step 04</div>
+                <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-coral to-dahong text-ink flex items-center justify-center font-extrabold">4</div>
+              </div>
+              <p class="mt-3 font-semibold">방문 또는 비대면 코멘트 전달</p>
+              <p class="mt-1 text-sm text-white">원하는 방식으로 피드백을 받습니다.</p>
+            </div>
+          </div>
+          <div class="lg:col-span-3">
+            <div class="rounded-2xl border border-white/10 bg-white/[.03] p-6 backdrop-blur">
+              <h3 class="text-xl font-bold">자주 묻는 질문</h3>
+              <div class="mt-4 space-y-3">
+                <details class="group rounded-xl bg-white/5 p-4">
+                  <summary class="flex items-center justify-between cursor-pointer text-white">
+                    Q1. 진단은 얼마나 걸리나요?
+                  </summary>
+                  <p class="mt-3 text-sm text-white">
+                    설문 입력 약 3분, 준비 2분, 리포트 제공은 보통 24~48시간 이내입니다. 빠른 경우 당일 제공돼요.
+                  </p>
+                </details>
+                <details class="group rounded-xl bg-white/5 p-4">
+                  <summary class="flex items-center justify-between cursor-pointer text-white">
+                    Q2. 비대면도 가능한가요?
+                  </summary>
+                  <p class="mt-3 text-sm text-white">
+                    네, 온라인으로 리포트를 제공하고 영상 또는 메시지로 1:1 코멘트를 드립니다. 일정만 맞추면 언제든 가능해요.
+                  </p>
+                </details>
+                <details class="group rounded-xl bg-white/5 p-4">
+                  <summary class="flex items-center justify-between cursor-pointer text-white">
+                    Q3. 어떤 사진이 필요하나요?
+                  </summary>
+                  <p class="mt-3 text-sm text-white">
+                    정면, 자연광, 보정 없는 사진 1~2장을 권장합니다. 얼굴 전체가 나오고 헤어로 윤곽이 가리지 않도록 찍어주세요.
+                  </p>
+                </details>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- FAQ -->
-  <section id="faq" class="section bg-[#0f0f10]">
-    <div class="mx-auto max-w-3xl px-5">
-      <h2 class="text-3xl sm:text-4xl font-extrabold">FAQ</h2>
-    <div class="mt-6 space-y-4">
-        <div class="rounded-2xl border border-white/10 bg-white/[0.04] overflow-hidden">
-          <button data-accordion class="w-full text-left px-5 sm:px-6 py-4 flex items-center justify-between">
-            <span class="font-semibold text-white">Q1. 효과가 있나요?</span>
-            <svg class="rotate" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M7 10l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </button>
-          <div class="px-5 sm:px-6 pb-5">
-            <p class="text-white/80">
-              👉 결론: 있습니다(개인차 있음).<br/>
-              • 1주: 뭉침 완화, 표정 편안함<br/>
-              • 2주: 라인 정돈 체감<br/>
-              • 4주: 타인이 알아볼 변화<br/>
-              핵심: 주 7일, 하루 10분
-            </p>
+    <!-- ⑥ 후기 -->
+    <section class="relative z-10">
+      <div class="mx-auto max-w-7xl px-6 py-12">
+        <h2 class="text-2xl sm:text-3xl font-extrabold">실제 후기</h2>
+        <div class="mt-6 grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+          <div class="relative rounded-2xl border border-white/10 bg-white/[.04] p-6">
+            <div class="absolute -top-3 left-6 inline-flex items-center rounded-full bg-gradient-to-r from-coral to-dahong px-3 py-1 text-[11px] text-ink font-semibold shadow-glow">
+              <span class="review-badge" data-random>라벨</span>
+            </div>
+            <p class="mt-2 text-gray-200">“나의 얼굴이 어떤 얼굴형인지 알게되었어요”</p>
           </div>
-        </div>
-        <div class="rounded-2xl border border-white/10 bg-white/[0.04] overflow-hidden">
-          <button data-accordion class="w-full text-left px-5 sm:px-6 py-4 flex items-center justify-between">
-            <span class="font-semibold text-white">Q2. 시술과 다른가요?</span>
-            <svg class="rotate" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M7 10l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </button>
-          <div class="px-5 sm:px-6 pb-5">
-            <p class="text-white/80">
-              👉 차이는 ‘지속성’.<br/>
-              • 시술: 빠름, 비용/다운타임/유지 필요<br/>
-              • 훈련: 점진적, 습관·구조 변화로 유지력↑<br/>
-              함께하면: 시술 전·후 루틴 병행 시 안정감↑
-            </p>
+          <div class="relative rounded-2xl border border-white/10 bg-white/[.04] p-6">
+            <div class="absolute -top-3 left-6 inline-flex items-center rounded-full bg-gradient-to-r from-coral to-dahong px-3 py-1 text-[11px] text-ink font-semibold shadow-glow">
+              <span class="review-badge" data-random>라벨</span>
+            </div>
+            <p class="mt-2 text-gray-200">“무작정 관리 받는게 아니라 어떻게 관리해야할지 방향을 찾은 느낌이에요.”</p>
           </div>
-        </div>
-        <div class="rounded-2xl border border-white/10 bg-white/[0.04] overflow-hidden">
-          <button data-accordion class="w-full text-left px-5 sm:px-6 py-4 flex items-center justify-between">
-            <span class="font-semibold text-white">Q3. 얼마나 걸리나요?</span>
-            <svg class="rotate" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M7 10l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </button>
-          <div class="px-5 sm:px-6 pb-5">
-            <p class="text-white/80">
-              👉 하루 10분, 4주 코스.<br/>
-              흐름: (1주) 이완 → (2주) 정렬 → (3주) 안정화 → (4주) 유지 강화<br/>
-              운영: 주 7일, 바쁜 날엔 5분 코어 루틴
-            </p>
+          <div class="relative rounded-2xl border border-white/10 bg-white/[.04] p-6">
+            <div class="absolute -top-3 left-6 inline-flex items-center rounded-full bg-gradient-to-r from-coral to-dahong px-3 py-1 text-[11px] text-ink font-semibold shadow-glow">
+              <span class="review-badge" data-random>라벨</span>
+            </div>
+            <p class="mt-2 text-gray-200">“사진보다 실물이 좋아졌다는 말을 처음 들었어요.”</p>
           </div>
-        </div>
-        <div class="rounded-2xl border border-white/10 bg-white/[0.04] overflow-hidden">
-          <button data-accordion class="w-full text-left px-5 sm:px-6 py-4 flex items-center justify-between">
-            <span class="font-semibold text-white">Q4. 준비물이 있나요?</span>
-            <svg class="rotate" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M7 10l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </button>
-          <div class="px-5 sm:px-6 pb-5">
-            <p class="text-white/80">
-              👉 할 수 있다는 마음, 어디서든 가능합니다.<br/>
-              끝나고 나면 얼굴을 시원하게 해주세요.
-            </p>
+          <div class="relative rounded-2xl border border-white/10 bg-white/[.04] p-6">
+            <div class="absolute -top-3 left-6 inline-flex items-center rounded-full bg-gradient-to-r from-coral to-dahong px-3 py-1 text-[11px] text-ink font-semibold shadow-glow">
+              <span class="review-badge" data-random>라벨</span>
+            </div>
+            <p class="mt-2 text-gray-200">“내 얼굴골격 포인트를 알게 되니 케어하기가 쉬워졌어요.”</p>
           </div>
-        </div>
-        <div class="rounded-2xl border border-white/10 bg-white/[0.04] overflow-hidden">
-          <button data-accordion class="w-full text-left px-5 sm:px-6 py-4 flex items-center justify-between">
-            <span class="font-semibold text-white">Q5. 누구에게 적합한가요?</span>
-            <svg class="rotate" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M7 10l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </button>
-          <div class="px-5 sm:px-6 pb-5">
-            <p class="text-white/80">
-              👉 추천 대상<br/>
-              • 부기가 자주 되돌아오는 분<br/>
-              • 턱 긴장/이갈이 습관이 있는 분<br/>
-              • 사진·화면에서 얼굴 폭이 넓어 보이는 분<br/>
-              참고: 통증 등 의료 이슈는 전문가 상담 후 진행
-            </p>
+          <div class="relative rounded-2xl border border-white/10 bg-white/[.04] p-6">
+            <div class="absolute -top-3 left-6 inline-flex items-center rounded-full bg-gradient-to-r from-coral to-dahong px-3 py-1 text-[11px] text-ink font-semibold shadow-glow">
+              <span class="review-badge" data-random>라벨</span>
+            </div>
+            <p class="mt-2 text-gray-200">“면접 준비할 때 큰 도움 됐습니다.”</p>
           </div>
-        </div>
-    </div>
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <section id="cta" class="section bg-white text-[#0b0b0c]">
-    <div class="mx-auto max-w-6xl px-5">
-      <div class="grid lg:grid-cols-2 gap-10 items-center">
-        <div>
-          <h2 class="text-3xl sm:text-4xl font-extrabold">“지금, 얼굴 골격을 줄이는 훈련을 시작하세요.”</h2>
-          <div class="mt-3 flex items-center gap-3 flex-wrap">
-            <div class="text-xs font-semibold px-3 py-1 rounded-full border" style="color: var(--deep-red); border-color: rgba(214,31,31,.25); background: rgba(214,31,31,.06);">루티너스 1기 · 마감 임박</div>
-            <div class="text-sm">루티너스 1기 <span class="font-bold" style="color: var(--deep-red);">선착순 30명 무료</span><span class="text-zinc-500">(정상가 15만원)</span></div>
+          <div class="relative rounded-2xl border border-white/10 bg-white/[.04] p-6">
+            <div class="absolute -top-3 left-6 inline-flex items-center rounded-full bg-gradient-to-r from-coral to-dahong px-3 py-1 text-[11px] text-ink font-semibold shadow-glow">
+              <span class="review-badge" data-random>라벨</span>
+            </div>
+            <p class="mt-2 text-gray-200">“셀카 각도부터 헤어라인까지 방향이 생겼어요.”</p>
           </div>
-
-
-          <p class="mt-3 text-zinc-700">하루 10분이면 충분합니다. 꾸준함만 준비해 주세요.</p>
-          <a href="#apply" class="mt-7 inline-flex items-center gap-2 rounded-2xl text-white font-semibold px-6 py-3 glow hover:translate-y-[-2px] active:translate-y-0 transition" style="background: linear-gradient(135deg, var(--orange), var(--scarlet));">
-            얼굴축소 훈련 지금 신청하기
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 5l7 7-7 7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
-
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- FOOTER -->
-  <footer class="bg-[#0b0b0c] border-t border-white/10">
-    <div class="mx-auto max-w-6xl px-5 py-10 flex flex-col sm:flex-row items-center justify-between gap-4">
-      <div class="flex items-center gap-3">
-        <div class="h-8 w-8 rounded-xl brand-grad"></div>
-        <div class="text-white/80 text-sm">© 얼굴골격축소훈련소</div>
+    <!-- ⑦ 혜택 강조 -->
+    <section id="benefits" class="relative z-10">
+      <div class="mx-auto max-w-7xl px-6 py-12">
+        <div class="rounded-3xl bg-gradient-to-br from-coral to-dahong p-1 shadow-glow">
+          <div class="rounded-[22px] bg-ink p-6 sm:p-8">
+            <div class="flex items-center justify-between gap-4 flex-wrap">
+              <h2 class="text-2xl sm:text-3xl font-extrabold">
+                🎁 지금 신청 시 제공되는 혜택
+              </h2>
+              <a id="cta"
+                 class="cursor-pointer inline-flex items-center gap-2 rounded-xl bg-white text-ink px-4 py-2 font-semibold hover:opacity-90 transition">
+                바로 신청하기
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+                </svg>
+              </a>
+            </div>
+
+            <div class="mt-6 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              <div class="rounded-xl bg-white/5 p-4">
+                <div class="flex items-start gap-3">
+                  <span class="inline-flex w-6 h-6 items-center justify-center rounded-full bg-white text-ink text-sm font-bold">✓</span>
+                  <p>얼굴 구조 진단 리포트 무료</p>
+                </div>
+              </div>
+              <div id="discount" class="rounded-xl bg-white/5 p-4">
+                <div class="flex items-start gap-3">
+                  <span class="inline-flex w-6 h-6 items-center justify-center rounded-full bg-white text-ink text-sm font-bold">✓</span>
+                  <p>첫 방문 시 50% 할인</p>
+                </div>
+              </div>
+              <div class="rounded-xl bg-white/5 p-4">
+                <div class="flex items-start gap-3">
+                  <span class="inline-flex w-6 h-6 items-center justify-center rounded-full bg-white text-ink text-sm font-bold">✓</span>
+                  <p>1:1 스타일 분석 코멘트</p>
+                </div>
+              </div>
+              <div class="rounded-xl bg-white/5 p-4">
+                <div class="flex items-start gap-3">
+                  <span class="inline-flex w-6 h-6 items-center justify-center rounded-full bg-white text-ink text-sm font-bold">✓</span>
+                  <p>원할 경우 오프라인 방문 진단 연결</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-4 text-[12px] text-white">
+              모든 혜택은 한정 제공될 수 있습니다.
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-  </footer>
+    </section>
 
-  <!-- Toast -->
-  <div id="toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 hidden">
-    <div class="rounded-2xl px-5 py-3 bg-[#0f0f10] border border-white/10 text-white glow">
-      <span class="font-semibold" style="color: var(--orange);">제출 완료!</span>
-      <span class="text-white/80 ml-2">곧 프로그램 안내를 드릴게요. (Demo)</span>
+    <!-- ⑧ 마무리 CTA -->
+    <section class="relative z-10">
+      <div class="mx-auto max-w-5xl px-6 py-14">
+        <div class="rounded-3xl border border-white/10 bg-white/[.03] p-10 text-center backdrop-blur">
+          <p class="text-xl sm:text-2xl text-gray-200">
+            “이젠, 얼굴부터 설계하세요.”
+          </p>
+          <button
+            class="mt-6 inline-flex items-center justify-center gap-3 rounded-xl bg-gradient-to-r from-coral to-dahong px-7 py-3.5 text-base font-semibold text-ink shadow-glow hover:opacity-95 transition"
+            id="finalCta"
+          >
+            👉 지금 바로 진단 신청하기
+          </button>
+          
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="relative z-10">
+      <div class="mx-auto max-w-7xl px-6 pt-2 pb-10 flex items-center justify-center">
+        <p class="text-[12px] text-white">© 2025 바른얼굴윤곽연구소</p>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Custom Modal for form URL -->
+  <div id="modalOverlay" class="fixed inset-0 z-[60] hidden">
+    <div class="absolute inset-0 bg-black/60"></div>
+    <div class="absolute inset-0 flex items-center justify-center p-4">
+      <div class="w-full max-w-lg rounded-2xl border border-white/10 bg-coal p-6 shadow-deep">
+        <div class="flex items-center justify-between">
+          <h3 class="text-lg font-bold">설문폼 링크 설정</h3>
+          <button id="closeModal"
+                  class="rounded-full bg-white/5 px-3 py-1 text-[12px] text-white hover:bg-white/10 transition">
+            닫기
+          </button>
+        </div>
+        <p class="mt-2 text-sm text-white">
+          연결할 설문폼의 주소를 붙여넣어 주세요. 저장 후 상단 버튼으로 바로 이동할 수 있어요.
+        </p>
+        <label class="mt-4 block text-[12px] text-white">폼 URL (https로 시작)</label>
+        <input id="formUrlInput"
+               class="mt-2 w-full rounded-xl border border-white/10 bg-white/5 p-3 text-sm text-white placeholder:text-midgray focus:outline-none focus:ring-2 focus:ring-coral"
+               type="url" placeholder="예: https://forms.gle/..." />
+        <p id="formUrlError" class="mt-2 hidden text-[12px] text-red-400">올바른 https 링크를 입력해주세요.</p>
+
+        <div class="mt-5 flex items-center justify-between gap-3">
+          <div class="text-[12px] text-white">
+            저장 후 버튼을 누르면 새 탭으로 열립니다.
+          </div>
+          <div class="flex items-center gap-2">
+            <button id="saveFormUrl"
+                    class="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-coral to-dahong px-4 py-2 text-sm font-semibold text-ink hover:opacity-95 transition">
+              저장하기
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
+  <!-- Scripts -->
   <script>
-    // FAQ accordion
-    document.querySelectorAll('[data-accordion]').forEach(btn=>{
-      btn.addEventListener('click', ()=>{
-        const wrap = btn.parentElement;
-        const content = wrap.querySelector('div + div');
-        const icon = btn.querySelector('svg.rotate');
-        document.querySelectorAll('#faq [data-accordion]').forEach(b=>{
-          const c = b.parentElement.querySelector('div + div');
-          const i = b.querySelector('svg.rotate');
-          if(c && c !== content){ c.classList.add('hidden'); if(i) i.style.transform = 'rotate(0deg)'; }
-        });
-        if(content){
-          content.classList.toggle('hidden');
-          if(icon){ icon.style.transform = content.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(180deg)'; }
+    // Simple state
+    const state = {
+      formURL: 'https://walla.my/survey/VPI7dQAm2dWfstvaSs9h',
+    };
+
+    // Elements
+    const modalOverlay = document.getElementById('modalOverlay');
+    const closeModalBtn = document.getElementById('closeModal');
+    const formUrlInput = document.getElementById('formUrlInput');
+    const formUrlError = document.getElementById('formUrlError');
+    const primaryCta = document.getElementById('primaryCta');
+    const finalCta = document.getElementById('finalCta');
+    const ctaInBenefits = document.getElementById('cta');
+
+    // Helpers
+    const openModal = () => {
+      modalOverlay.classList.remove('hidden');
+      setTimeout(() => formUrlInput?.focus(), 80);
+    };
+    const closeModal = () => {
+      modalOverlay.classList.add('hidden');
+      formUrlError.classList.add('hidden');
+    };
+    const validHttps = (url) => {
+      try {
+        const u = new URL(url);
+        return u.protocol === 'https:';
+      } catch (e) {
+        return false;
+      }
+    };
+    const saveUrl = () => {
+      const value = formUrlInput.value.trim();
+      if (!validHttps(value)) {
+        formUrlError.classList.remove('hidden');
+        return;
+      }
+      formUrlError.classList.add('hidden');
+      state.formURL = value;
+      try {
+        localStorage.setItem('faceDesignFormURL', state.formURL);
+      } catch (e) {}
+      closeModal();
+    };
+    const goForm = () => {
+      if (state.formURL) {
+        try {
+          window.open(state.formURL, '_blank');
+        } catch (e) {}
+      }
+    };
+
+    // Load stored URL
+    (function init() {
+      try {
+        const saved = localStorage.getItem('faceDesignFormURL') || '';
+        if (saved) {
+          state.formURL = saved;
+          formUrlInput.value = saved;
         }
+      } catch (e) {}
+    })();
+
+    // Events
+    closeModalBtn.addEventListener('click', closeModal);
+    modalOverlay.addEventListener('click', (e) => {
+      if (e.target === modalOverlay) closeModal();
+    });
+    document.getElementById('saveFormUrl').addEventListener('click', saveUrl);
+
+    primaryCta.addEventListener('click', goForm);
+    finalCta.addEventListener('click', goForm);
+    ctaInBenefits.addEventListener('click', goForm);
+
+    // Smooth scroll for chips
+    document.querySelectorAll('[data-scroll-to]').forEach((el) => {
+      el.addEventListener('click', () => {
+        const target = el.getAttribute('data-scroll-to');
+        const node = target ? document.querySelector(target) : null;
+        if (node) node.scrollIntoView({ behavior: 'smooth', block: 'start' });
       });
     });
 
-    // 72시간 개인별 타이머 (로컬 저장)
-    (function(){
-      const KEY = 'cc_personal_72h_deadline';
-      const now = Date.now();
-      let deadline = localStorage.getItem(KEY);
-      if(!deadline){
-        // 첫 방문: 지금부터 72시간 뒤 저장
-        deadline = now + 72*60*60*1000;
-        localStorage.setItem(KEY, String(deadline));
-      } else {
-        deadline = parseInt(deadline, 10);
-        // 만료되면 72시간을 다시 부여 (원하면 유지로 변경 가능)
-        if(now > deadline){
-          deadline = now + 72*60*60*1000;
-          localStorage.setItem(KEY, String(deadline));
-        }
-      }
-
-      const pad = n => String(n).padStart(2,'0');
-      const countdownEl = document.getElementById('countdown');
-      const ddayEl = document.getElementById('dday');
-
-      function tick(){
-        if(!countdownEl || !ddayEl) return;
-        const diff = Math.max(0, deadline - Date.now());
-        const totalSec = Math.floor(diff/1000);
-        const days = Math.floor(totalSec / 86400);
-        const hrs = Math.floor((totalSec % 86400) / 3600);
-        const mins = Math.floor((totalSec % 3600) / 60);
-        const secs = totalSec % 60;
-        ddayEl.textContent = days > 0 ? `D-${days}` : '오늘 마감';
-        countdownEl.textContent = `${pad(days*24+hrs)}:${pad(mins)}:${pad(secs)}`;
-      }
-      tick();
-      setInterval(tick, 1000);
-    })();
-
-    // Demo form submit
-    const form = document.getElementById('demoForm');
-    const toast = document.getElementById('toast');
-    if(form && toast){
-      form.addEventListener('submit', (e)=>{
-        e.preventDefault();
-        toast.classList.remove('hidden');
-        setTimeout(()=> toast.classList.add('hidden'), 2400);
-        form.reset();
-        document.getElementById('cta').scrollIntoView({behavior:'smooth', block:'start'});
+    // Randomize review badges
+    (function randomizeBadges(){
+      const labels = [
+        '20대 직장인', '30대 여성', '40대 남성', '대학생', '프리랜서', '디자이너', '마케터', '자영업자'
+      ];
+      document.querySelectorAll('.review-badge[data-random]').forEach(el => {
+        const txt = labels[Math.floor(Math.random()*labels.length)];
+        el.textContent = txt;
       });
-    }
+    })();
   </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'97082f421057d1ed',t:'MTc1NTQyMzM2MC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'97082951255ad1ea',t:'MTc1NTQyMzExNy4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
